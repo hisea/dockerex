@@ -1,13 +1,13 @@
-defmodule Docker.Client do
+defmodule Dockerex.Client do
   require Logger
 
   defp base_url do
-    host = Application.get_env(:docker, :host)
+    host = Application.get_env(:dockerex, :host)
     "#{host}"
   end
 
   defp options do
-    options = Application.get_env(:docker, :opt)
+    options = Application.get_env(:dockerex, :options)
   end
 
   @default_headers %{"Content-Type" => "application/json"}
