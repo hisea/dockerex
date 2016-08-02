@@ -46,6 +46,7 @@ defmodule Dockerex.Client do
     Logger.debug "Empty response"
     :nil
   end
+
   defp decode_body(%HTTPoison.Response{body: body}) do
     Logger.debug "Decoding Docker API response: #{inspect body}"
     case Poison.decode(body) do
