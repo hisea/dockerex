@@ -1,6 +1,6 @@
 # Dockerex
 
-**TODO: Add description**
+Dockerex is a Docker API Client for Elixir that supports SSL connection to a Docker Host or a Docker Swarm manager.
 
 ## Installation
 
