@@ -21,4 +21,18 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:dockerex]]
     end
     ```
+  
+  3. Config your docker host in `config.exs`
+  
+  ```
+  config :dockerex,
+  host: "https://10.10.10.1:2376/",
+  options: [
+    ssl:  [
+      {:certfile, "/path/to/your/cert.pem"},
+      {:keyfile, "/path/to/your/key.pem"}
+    ]
+  ]
+  ```
+  
 
