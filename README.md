@@ -6,7 +6,7 @@ Dockerex is a lightweight Docker Remote API Client for Elixir that supports SSL 
  
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+The package can be installed as:
 
   1. Add `dockerex` to your list of dependencies in `mix.exs`:
 
