@@ -37,13 +37,13 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   ]
   ```
   
-  ## Usage
-  Dockerex is a lightweight client, which means you need to specify the endpoint and original docker params in a map format.
-  
-  Some examples:
-  
-  
-  ```
+## Usage
+ Dockerex is a lightweight client, which means you need to specify the endpoint and original docker params in a map format.
+
+ Some examples:
+
+
+```
     result = Dockerex.Client.post("containers/create", %{"Image": "nginx",
                                                          "Tty": true,
                                                          "HostConfig": %{"RestartPolicy": %{ "Name": "always"}},
@@ -57,5 +57,5 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     Dockerex.Client.get("containers/#{cid}/logs?stderr=1&stdout=1&timestamps=0&since=#{DateTime.to_unix(DateTime.utc_now) - 5}")
     
     Dockerex.Client.delete("containers/#{cid}")
-  ```
+```
 
