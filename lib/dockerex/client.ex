@@ -7,7 +7,7 @@ defmodule Dockerex.Client do
   end
 
   defp options do
-    options = Application.get_env(:dockerex, :options)
+    Application.get_env(:dockerex, :options)
   end
 
   @default_headers %{"Content-Type" => "application/json"}
