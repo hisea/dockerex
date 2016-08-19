@@ -8,6 +8,7 @@ defmodule Dockerex.Mixfile do
      description: "A lightweight Docker api client that supports SSL connection.",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package,
      deps: deps()]
   end
 
