@@ -37,8 +37,15 @@ The package can be installed as:
   ]
   ```
   
+You may also establish a connection to the docker engine over a unix socket. To
+do this, set the host variable in your config to `"http+unix://PATH/"`. Note
+that `PATH` has to be URI-encoded, i.e. the default socket path would be
+`%2Fvar%2Frun%2Fdocker.sock`.
+
 ## Usage
  Dockerex is a lightweight client, which means you need to specify the endpoint and original docker params in a map format.
+Before making any requests, you have to start the HTTP client by calling
+`HTTPoison.start`.
 
  Some examples:
 
