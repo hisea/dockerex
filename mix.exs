@@ -31,7 +31,7 @@ defmodule Dockerex.Mixfile do
   defp deps do
     [
       {:poison, "~> 2.2.0"},
-      {:httpoison, "~> 0.9.0"},
+      {:httpoison, "~> 0.11.0"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end

@@ -10,12 +10,15 @@ defmodule Dockerex.Client do
     Application.get_env(:dockerex, :options)
   end
 
-  @default_headers %{"Content-Type" => "application/json"}
+  defp default_headers do
+    {:ok , hostname} = :inet.gethostname
+    %{"Content-Type" => "application/json", "Host" => hostname}
+  end
 
   @doc """
   Send a GET request to the Docker API at the speicifed resource.
   """
-  def get(resource, headers \\ @default_headers, opt \\ []) do
+  def get(resource, headers \\ default_headers, opt \\ []) do
     Logger.debug "Sending GET request to the Docker HTTP API: #{resource}"
     base_url <> resource
     |> HTTPoison.get!(headers, Keyword.merge(options, opt))
@@ -25,7 +28,7 @@ defmodule Dockerex.Client do
   @doc """
   Send a POST request to the Docker API, JSONifying the passed in data.
   """
-  def post(resource, data \\ "", headers \\ @default_headers, opt \\ []) do
+  def post(resource, data \\ "", headers \\ default_headers, opt \\ []) do
     Logger.debug "Sending POST request to the Docker HTTP API: #{resource}, #{inspect data}"
     data = Poison.encode! data
     base_url <> resource
@@ -36,7 +39,7 @@ defmodule Dockerex.Client do
   @doc """
   Send a DELETE request to the Docker API.
   """
-  def delete(resource, headers \\ @default_headers, opt \\ []) do
+  def delete(resource, headers \\ default_headers, opt \\ []) do
     Logger.debug "Sending DELETE request to the Docker HTTP API: #{resource}"
     base_url <> resource
     |> HTTPoison.delete!(headers, Keyword.merge(options, opt))
