@@ -3,7 +3,7 @@ defmodule Dockerex.Mixfile do
 
   def project do
     [app: :dockerex,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.3",
      description: "A lightweight Docker api client that supports SSL connection.",
      build_embedded: Mix.env == :prod,
