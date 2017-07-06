@@ -7,7 +7,7 @@ defmodule Dockerex.Client do
   end
 
   defp options do
-    Application.get_env(:dockerex, :options)
+    Application.get_env(:dockerex, :options, [])
   end
 
   defp default_headers do
